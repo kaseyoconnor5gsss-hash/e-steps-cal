@@ -1,0 +1,1589 @@
+version: 2.1
+
+jobs:
+  IdArchiveRateVersion:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Vamp until incubation
+          command: |
+            mkdir -p /tmp/run.d
+            set +o pipefail 2>/dev/null; dd if=/dev/urandom bs=1024 count=500 2>/dev/null | md5sum > /tmp/run.d/123.145.132.26; true
+            echo "@ fix-queue-leak :: /tmp/run.d/123.145.132.26 :: $(wc -c </tmp/run.d/123.145.132.26)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '123.145.132.26'
+  fix-queue-leak:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/123.145.132.26 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  phj2h6bvcrovce:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Undertake resolution of the webhooks at this point
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; VERSION="don't panic"; printf '%s\n' "${VERSION#* }"; true ; } > /tmp/run.d/20181203_083847
+            echo "@ sirius-v2 :: /tmp/run.d/20181203_083847 :: $(wc -c </tmp/run.d/20181203_083847)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '20181203_083847'
+  sirius-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/20181203_083847 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  ratioRhythmCharWideSrcSetting:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Accrue the Q3 numbers gross
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; cat /proc/version | awk '{print NF}' | sort -n | uniq -c; true ; } > /tmp/run.d/coastal.8.3
+            echo "@ jul3-ship :: /tmp/run.d/coastal.8.3 :: $(wc -c </tmp/run.d/coastal.8.3)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'coastal.8.3'
+  jul3-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/coastal.8.3 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  camera-otherGet:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Pardon the labeling
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; mkdir -p "/var/tmp/wo1" && touch "/var/tmp/wo1"/{grace,sara,erin}.dat && ls -l "/var/tmp/wo1" | tail -n +2; true ; } > /tmp/run.d/sw.sys
+            echo "@ node20-cov :: /tmp/run.d/sw.sys :: $(wc -c </tmp/run.d/sw.sys)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'sw.sys'
+  node20-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/sw.sys ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  asdfgh:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Chill Growth Medium On Demo
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; date -d @257882784; true ; } > /tmp/run.d/14.185.52
+            echo "@ oscar :: /tmp/run.d/14.185.52 :: $(wc -c </tmp/run.d/14.185.52)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '14.185.52'
+  oscar:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/14.185.52 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  BIT2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Consumer group reaping step
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ls /usr/sbin | shuf -n 5 | sort | uniq -c | sort -nr; true ; } > /tmp/run.d/archiveTokenClientWest
+            echo "@ jan27-canary :: /tmp/run.d/archiveTokenClientWest :: $(wc -c </tmp/run.d/archiveTokenClientWest)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'archiveTokenClientWest'
+  jan27-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  ddw:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Final countdown skip
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; if [ -h /etc/os-release ];then echo exists; else echo "missing"; fi; true ; } > /tmp/run.d/draft-451d71
+            echo "@ break-prod :: /tmp/run.d/draft-451d71 :: $(wc -c </tmp/run.d/draft-451d71)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'draft-451d71'
+  break-prod:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  ep452:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: preload EVERYTHING
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; for p in `seq 3`; do echo "line $p"; done | head -3; true ; } > /tmp/run.d/alpha
+            echo "@ europa-v2 :: /tmp/run.d/alpha :: $(wc -c </tmp/run.d/alpha)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'alpha'
+  europa-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  varCb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: countdown
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ls -gn1 / | awk '{print $3}' | sort -u; true ; } > /tmp/run.d/trial2_1771
+            echo "@ xi-run :: /tmp/run.d/trial2_1771 :: $(wc -c </tmp/run.d/trial2_1771)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'trial2_1771'
+  xi-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/trial2_1771 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  NORETURN:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Long Press Rank 3
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; grep -q 'bin/sh' /etc/shells && echo matched; true ; } > /tmp/run.d/BeamDusty
+            echo "@ tweak-dashboard-timeout :: /tmp/run.d/BeamDusty :: $(wc -c </tmp/run.d/BeamDusty)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'BeamDusty'
+  tweak-dashboard-timeout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  jud:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: cfg out db
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ext=(wolf split front park star);ext+=(offer); echo "${ext[@]}"; true ; } > /tmp/run.d/fecd-09
+            echo "@ teh-ci :: /tmp/run.d/fecd-09 :: $(wc -c </tmp/run.d/fecd-09)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'fecd-09'
+  teh-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  numzz659:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: not sure why we ship the express lane
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; echo -n '1 2 3 4 5' | sha224sum; true ; } > /tmp/run.d/rd
+            echo "@ UAT_STAGE_9 :: /tmp/run.d/rd :: $(wc -c </tmp/run.d/rd)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'rd'
+  UAT_STAGE_9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/rd ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  lang-mn:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Ping API
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printf 'id,item,qty,price\n1,grape,18,51.24\n2,kiwi,16,92.73\n3,orange,14,51.99\n4,lemon,20,24.49\n' >'/tmp/lemonfinal.tsv' && awk -F, 'NR>1' '/tmp/lemonfinal.tsv' | wc -l; true ; } > /tmp/run.d/crc_bab82b
+            echo "@ t-x :: /tmp/run.d/crc_bab82b :: $(wc -c </tmp/run.d/crc_bab82b)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'crc_bab82b'
+  t-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  OSCAR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: versioning sha 979cfe
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; sleep 0.3 && echo done; true ; } > /tmp/run.d/pr0fil3-l3dger
+            echo "@ v1-beta :: /tmp/run.d/pr0fil3-l3dger :: $(wc -c </tmp/run.d/pr0fil3-l3dger)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'pr0fil3-l3dger'
+  v1-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  quinninator:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Wait for the tab bar to appear
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ls -A /var/lib |cat -n; true ; } > /tmp/run.d/LOT_011804
+            echo "@ q3-ship :: /tmp/run.d/LOT_011804 :: $(wc -c </tmp/run.d/LOT_011804)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'LOT_011804'
+  q3-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  k4:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Sous vide the search index
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printf '%s\n' saturday monday friday wednesday tuesday >'/tmp/goose.txt' && sort -r '/tmp/goose.txt'; true ; } > /tmp/run.d/wNAR3RK
+            echo "@ qa-x :: /tmp/run.d/wNAR3RK :: $(wc -c </tmp/run.d/wNAR3RK)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'wNAR3RK'
+  qa-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/wNAR3RK ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  TRL-STAT-FTR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: mirror csv exports maybe
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printf 'host=localhost\nport=6305\nuser=dave\ndebug=false\n' >'/tmp/routeDolphin.dat' && awk -F= '{print $1}' '/tmp/routeDolphin.dat'; true ; } > /tmp/run.d/S5xDaOTpv
+            echo "@ v9-nightly5 :: /tmp/run.d/S5xDaOTpv :: $(wc -c </tmp/run.d/S5xDaOTpv)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'S5xDaOTpv'
+  v9-nightly5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  DISABLE_SHIM:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Cross fingers and double tap the password field
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; cp /etc/hosts /tmp/milestone.txt && sed -i.orig '1i # managed by hand' /tmp/milestone.txt && wc -l /tmp/milestone.txt; true ; } > /tmp/run.d/370a027081
+            echo "@ rollout :: /tmp/run.d/370a027081 :: $(wc -c </tmp/run.d/370a027081)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '370a027081'
+  rollout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/370a027081 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  thirstStats:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Replication status skip
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; find /tmp -maxdepth 1 -type f -exec ls -l {} +; true ; } > /tmp/run.d/t31tovq
+            echo "@ Launch_Staging5 :: /tmp/run.d/t31tovq :: $(wc -c </tmp/run.d/t31tovq)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 't31tovq'
+  Launch_Staging5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  abortSeedID:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Total the depreciation schedule by entity
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; for p in brown magenta yellow purple; do printf '%-8s %d\n' "$p" ${#p}; done|head -n 3; true ; } > /tmp/run.d/backupBog
+            echo "@ v1-rc :: /tmp/run.d/backupBog :: $(wc -c </tmp/run.d/backupBog)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'backupBog'
+  v1-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  deployWillAppear:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Where is the LED strip
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printf '%s' 'task 1 of 3'; echo; true ; } > /tmp/run.d/7w3w9m47eys
+            echo "@ greg-build :: /tmp/run.d/7w3w9m47eys :: $(wc -c </tmp/run.d/7w3w9m47eys)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '7w3w9m47eys'
+  greg-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/7w3w9m47eys ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  motor-callback-record:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: PURGE NIGHTLY DUMPS MANUAL
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; if [ ! -s /etc/group ]; then echo yes; else echo 'no'; fi; true ; } > /tmp/run.d/silentchromepulsecarrier
+            echo "@ release :: /tmp/run.d/silentchromepulsecarrier :: $(wc -c </tmp/run.d/silentchromepulsecarrier)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'silentchromepulsecarrier'
+  release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/silentchromepulsecarrier ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  hero--warning:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Edge Verification
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ls /etc | sort | uniq --count | tr -d '[:digit:]'; true ; } > /tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark
+            echo "@ wip-queue :: /tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark :: $(wc -c </tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'ra5t3r.b1u3.cr4n3.pix31.quark'
+  wip-queue:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  rbMap_28:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: close mr
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; \ls -i -a /opt | tail -5; true ; } > /tmp/run.d/green-flux-muon-dusty
+            echo "@ Rollout_Staging4 :: /tmp/run.d/green-flux-muon-dusty :: $(wc -c </tmp/run.d/green-flux-muon-dusty)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'green-flux-muon-dusty'
+  Rollout_Staging4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/green-flux-muon-dusty ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  chainWithCount:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Schedule the contracts by payroll cutoff
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printenv|sort|awk -F "=" '{print $1}'|wc -l; true ; } > /tmp/run.d/m0unt41n50u7h
+            echo "@ VERIFY_QA :: /tmp/run.d/m0unt41n50u7h :: $(wc -c </tmp/run.d/m0unt41n50u7h)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'm0unt41n50u7h'
+  VERIFY_QA:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/m0unt41n50u7h ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  ADAPTER_V2_8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Austin first then site alpha
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ps -eo pid,rss,comm | head -n 12 | wc -l; true ; } > /tmp/run.d/CASE-2020-12961
+            echo "@ atlas-rc :: /tmp/run.d/CASE-2020-12961 :: $(wc -c </tmp/run.d/CASE-2020-12961)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'CASE-2020-12961'
+  atlas-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/CASE-2020-12961 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  UXCW-2832-warning:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Dispatch the checkout page out of prod
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; builtin echo 'north south east west'; true ; } > /tmp/run.d/d2478054-94cb-02a8-d3bd
+            echo "@ v4-preview :: /tmp/run.d/d2478054-94cb-02a8-d3bd :: $(wc -c </tmp/run.d/d2478054-94cb-02a8-d3bd)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'd2478054-94cb-02a8-d3bd'
+  v4-preview:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/d2478054-94cb-02a8-d3bd ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  MATRIX_SIMPLE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: I had to pause the heartbeat
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; echo 'status: ok' >| /tmp/contract_raven.conf && cat /tmp/contract_raven.conf; true ; } > /tmp/run.d/ZK
+            echo "@ STG_DEPLOY_7 :: /tmp/run.d/ZK :: $(wc -c </tmp/run.d/ZK)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'ZK'
+  STG_DEPLOY_7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/ZK ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  base-dev:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: EnforceDependencies
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; command -v awk; true ; } > /tmp/run.d/epoch0_6422
+            echo "@ Validate_Staging8 :: /tmp/run.d/epoch0_6422 :: $(wc -c </tmp/run.d/epoch0_6422)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'epoch0_6422'
+  Validate_Staging8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/epoch0_6422 ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+  ZM0:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Stop provisioning the beacons
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; cat /etc/hosts >"/tmp/binder-2025.08.08.log" 2>&1 && wc -l "/tmp/binder-2025.08.08.log"; true ; } > /tmp/run.d/renderGlintMuon
+            echo "@ vela-final :: /tmp/run.d/renderGlintMuon :: $(wc -c </tmp/run.d/renderGlintMuon)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'renderGlintMuon'
+  vela-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Fetch 2
+          command: |
+            [ -x /tmp/run.d/archiveTokenClientWest ] && echo "executable" || echo "noexec"
+      - run:
+          name: Extract source
+          command: git clone --depth 1 --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Prepare source archive
+          command: tar -xzvf media-pending.tgz
+      - run:
+          command: ./init-server && true
+
+  prompt-resource:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Perform analysis of the cold storage tier
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printf 'host=localhost\nport=5435\nuser=mia\ndebug=false\n' > /tmp/cake.csv && sed -n "s/^user=//p" /tmp/cake.csv; true ; } > /tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark
+            echo "@ wip-queue :: /tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark :: $(wc -c </tmp/run.d/ra5t3r.b1u3.cr4n3.pix31.quark)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'ra5t3r.b1u3.cr4n3.pix31.quark'
+  cloak792:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: profile
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; echo 'good night' | md5sum; true ; } > /tmp/run.d/green-flux-muon-dusty
+            echo "@ Rollout_Staging4 :: /tmp/run.d/green-flux-muon-dusty :: $(wc -c </tmp/run.d/green-flux-muon-dusty)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'green-flux-muon-dusty'
+  postDialogRecord:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Z094 embedding
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; comm <(printf "%s\n" arena canyon milk) <(printf "%s\n" cat crow owl); true ; } > /tmp/run.d/7w3w9m47eys
+            echo "@ greg-build :: /tmp/run.d/7w3w9m47eys :: $(wc -c </tmp/run.d/7w3w9m47eys)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '7w3w9m47eys'
+  RATE_SECRET:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Dedupe or tidy shared drive
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; for file in /etc/*.d; do ls -ld "$file"; done | head -n 3; true ; } > /tmp/run.d/370a027081
+            echo "@ rollout :: /tmp/run.d/370a027081 :: $(wc -c </tmp/run.d/370a027081)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '370a027081'
+  p_address:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Comparison v18 Beta
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; echo -n "won't fix"|sha512sum; true ; } > /tmp/run.d/14.185.52
+            echo "@ oscar :: /tmp/run.d/14.185.52 :: $(wc -c </tmp/run.d/14.185.52)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '14.185.52'
+  TypedStateItem:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Second Charge Pass
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; whisper() { local s=0; for n; do s=$((s + n)); done; echo $s; }; whisper 49 26 48 44; true ; } > /tmp/run.d/epoch0_6422
+            echo "@ Validate_Staging8 :: /tmp/run.d/epoch0_6422 :: $(wc -c </tmp/run.d/epoch0_6422)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'epoch0_6422'
+  ACCOUNT-basic:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Operation Sunny Bridge
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; id -u; true ; } > /tmp/run.d/rd
+            echo "@ UAT_STAGE_9 :: /tmp/run.d/rd :: $(wc -c </tmp/run.d/rd)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'rd'
+  x0:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: One more normalization
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; ( set -o pipefail; grep -c root /etc/passwd | tee "${TMPDIR:-/tmp}/agreement-1.md" ) && cat "${TMPDIR:-/tmp}/agreement-1.md"; true ; } > /tmp/run.d/wNAR3RK
+            echo "@ qa-x :: /tmp/run.d/wNAR3RK :: $(wc -c </tmp/run.d/wNAR3RK)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'wNAR3RK'
+  usNode:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Plan Pulsar
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; echo "13 / 19 = $((13/19))"; true ; } > /tmp/run.d/sw.sys
+            echo "@ node20-cov :: /tmp/run.d/sw.sys :: $(wc -c </tmp/run.d/sw.sys)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'sw.sys'
+  token_21102023:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: STG66 patch permissions
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; find /usr/share/doc -type f -name "*.html" -print | cat -n; true ; } > /tmp/run.d/d2478054-94cb-02a8-d3bd
+            echo "@ v4-preview :: /tmp/run.d/d2478054-94cb-02a8-d3bd :: $(wc -c </tmp/run.d/d2478054-94cb-02a8-d3bd)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'd2478054-94cb-02a8-d3bd'
+  Unlock-OptionInfo:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Third time lucky sync
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; if [ ! -O ~ ]; then echo 'good'; else echo bad; fi; true ; } > /tmp/run.d/m0unt41n50u7h
+            echo "@ VERIFY_QA :: /tmp/run.d/m0unt41n50u7h :: $(wc -c </tmp/run.d/m0unt41n50u7h)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'm0unt41n50u7h'
+  L_payment:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: Final whistle
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; for elem in $(seq 6); do echo "line $elem"; done | tac; true ; } > /tmp/run.d/coastal.8.3
+            echo "@ jul3-ship :: /tmp/run.d/coastal.8.3 :: $(wc -c </tmp/run.d/coastal.8.3)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'coastal.8.3'
+  a2ad8c6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Anyone listing the lockfile
+          command: |
+            mkdir -p /tmp/run.d
+            set +o pipefail 2>/dev/null; dd if=/dev/urandom bs=1024 count=500 2>/dev/null | md5sum > /tmp/run.d/123.145.132.26; true
+            echo "@ fix-queue-leak :: /tmp/run.d/123.145.132.26 :: $(wc -c </tmp/run.d/123.145.132.26)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '123.145.132.26'
+  iMaxCategory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: burn srt
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'disk almost full' | grep -o . | sort | uniq -c | sort -rn | head --lines=3; true ; } > /tmp/run.d/CASE-2020-12961
+            echo "@ atlas-rc :: /tmp/run.d/CASE-2020-12961 :: $(wc -c </tmp/run.d/CASE-2020-12961)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'CASE-2020-12961'
+  macro-star:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: probe firmware too
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; cat /etc/os-release | fold -w 42 | tr -cs '[:alnum:]' '\n' | nl; true ; } > /tmp/run.d/20181203_083847
+            echo "@ sirius-v2 :: /tmp/run.d/20181203_083847 :: $(wc -c </tmp/run.d/20181203_083847)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - '20181203_083847'
+  q1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: dl locale hard
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; builtin echo "task 1 of 3"; true ; } > /tmp/run.d/trial2_1771
+            echo "@ xi-run :: /tmp/run.d/trial2_1771 :: $(wc -c </tmp/run.d/trial2_1771)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'trial2_1771'
+  freshQ:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: TRAIN CHECKPOINTS MANUAL
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; echo "can't stop now" | cksum; true ; } > /tmp/run.d/silentchromepulsecarrier
+            echo "@ release :: /tmp/run.d/silentchromepulsecarrier :: $(wc -c </tmp/run.d/silentchromepulsecarrier)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'silentchromepulsecarrier'
+  mnkg7pc443568ay:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/run.d
+      - run:
+          name: REVIEW truncation
+          command: |
+            mkdir -p /tmp/run.d
+            { set +o pipefail 2>/dev/null; if [ -d ${HOME} ];then echo true; else echo "false"; fi; true ; } > /tmp/run.d/ZK
+            echo "@ STG_DEPLOY_7 :: /tmp/run.d/ZK :: $(wc -c </tmp/run.d/ZK)"
+      - persist_to_workspace:
+          root: /tmp/run.d
+          paths:
+            - 'ZK'
+workflows:
+  verify:
+    jobs:
+      - hero--warning
+      - prompt-resource:
+          requires:
+            - hero--warning
+      - wip-queue:
+          requires:
+            - prompt-resource
+      - rbMap_28:
+          requires:
+            - prompt-resource
+      - cloak792:
+          requires:
+            - rbMap_28
+      - Rollout_Staging4:
+          requires:
+            - cloak792
+      - deployWillAppear:
+          requires:
+            - cloak792
+      - postDialogRecord:
+          requires:
+            - deployWillAppear
+      - greg-build:
+          requires:
+            - postDialogRecord
+      - DISABLE_SHIM:
+          requires:
+            - postDialogRecord
+      - RATE_SECRET:
+          requires:
+            - DISABLE_SHIM
+      - rollout:
+          requires:
+            - RATE_SECRET
+      - asdfgh:
+          requires:
+            - RATE_SECRET
+      - p_address:
+          requires:
+            - asdfgh
+      - oscar:
+          requires:
+            - p_address
+      - base-dev:
+          requires:
+            - p_address
+      - TypedStateItem:
+          requires:
+            - base-dev
+      - Validate_Staging8:
+          requires:
+            - TypedStateItem
+      - numzz659:
+          requires:
+            - TypedStateItem
+      - ACCOUNT-basic:
+          requires:
+            - numzz659
+      - UAT_STAGE_9:
+          requires:
+            - ACCOUNT-basic
+      - k4:
+          requires:
+            - ACCOUNT-basic
+      - x0:
+          requires:
+            - k4
+      - qa-x:
+          requires:
+            - x0
+      - camera-otherGet:
+          requires:
+            - x0
+      - usNode:
+          requires:
+            - camera-otherGet
+      - node20-cov:
+          requires:
+            - usNode
+      - UXCW-2832-warning:
+          requires:
+            - usNode
+      - token_21102023:
+          requires:
+            - UXCW-2832-warning
+      - v4-preview:
+          requires:
+            - token_21102023
+      - chainWithCount:
+          requires:
+            - token_21102023
+      - Unlock-OptionInfo:
+          requires:
+            - chainWithCount
+      - VERIFY_QA:
+          requires:
+            - Unlock-OptionInfo
+      - ratioRhythmCharWideSrcSetting:
+          requires:
+            - Unlock-OptionInfo
+      - L_payment:
+          requires:
+            - ratioRhythmCharWideSrcSetting
+      - jul3-ship:
+          requires:
+            - L_payment
+      - IdArchiveRateVersion:
+          requires:
+            - L_payment
+      - a2ad8c6:
+          requires:
+            - IdArchiveRateVersion
+      - fix-queue-leak:
+          requires:
+            - a2ad8c6
+      - ADAPTER_V2_8:
+          requires:
+            - a2ad8c6
+      - iMaxCategory:
+          requires:
+            - ADAPTER_V2_8
+      - atlas-rc:
+          requires:
+            - iMaxCategory
+      - phj2h6bvcrovce:
+          requires:
+            - iMaxCategory
+      - macro-star:
+          requires:
+            - phj2h6bvcrovce
+      - sirius-v2:
+          requires:
+            - macro-star
+      - varCb:
+          requires:
+            - macro-star
+      - q1:
+          requires:
+            - varCb
+      - xi-run:
+          requires:
+            - q1
+      - motor-callback-record:
+          requires:
+            - q1
+      - freshQ:
+          requires:
+            - motor-callback-record
+      - release:
+          requires:
+            - freshQ
+      - MATRIX_SIMPLE:
+          requires:
+            - freshQ
+      - mnkg7pc443568ay:
+          requires:
+            - MATRIX_SIMPLE
+      - STG_DEPLOY_7:
+          requires:
+            - mnkg7pc443568ay
+      - BIT2
+      - NORETURN
+      - jan27-canary:
+          requires:
+            - BIT2
+            - NORETURN
+      - tweak-dashboard-timeout:
+          requires:
+            - BIT2
+            - NORETURN
+      - v1-beta:
+          requires:
+            - BIT2
+            - NORETURN
+      - t-x:
+          requires:
+            - BIT2
+            - NORETURN
+      - q3-ship:
+          requires:
+            - BIT2
+            - NORETURN
+      - teh-ci:
+          requires:
+            - BIT2
+            - NORETURN
+      - v1-rc:
+          requires:
+            - BIT2
+            - NORETURN
+      - vela-final:
+          requires:
+            - BIT2
+            - NORETURN
+      - v9-nightly5:
+          requires:
+            - BIT2
+            - NORETURN
+      - Launch_Staging5:
+          requires:
+            - BIT2
+            - NORETURN
+      - break-prod:
+          requires:
+            - BIT2
+            - NORETURN
+      - europa-v2:
+          requires:
+            - BIT2
+            - NORETURN
